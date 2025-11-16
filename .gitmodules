@@ -1,0 +1,3 @@
+[submodule "jpeg-dct-web"]
+	path = jpeg-dct-web
+	url = git@github.com:ywbird/jpeg-dct-web.git
