@@ -1,3 +1,9 @@
 [submodule "jpeg-dct-web"]
 	path = jpeg-dct-web
 	url = git@github.com:ywbird/jpeg-dct-web.git
+[submodule "cap-recap-method"]
+	path = cap-recap-method
+	url = git@github.com:ywbird/cap-recap-method.git
+[submodule "prey-predator-simulation"]
+	path = prey-predator-simulation
+	url = git@github.com:ywbird/prey-predator-simulation.git
