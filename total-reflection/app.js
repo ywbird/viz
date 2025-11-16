@@ -50,8 +50,8 @@ canvas.addEventListener("mousemove", (e) => {
   ctx.closePath()
 
   ctx.font = "20px monospace"
-  ctx.fillText(`${Math.round((theta) * 100) / 100}`, 200 + 5, 200 - 5)
-  ctx.fillText(`${Math.round((r) * 100) / 100}`, 200 + 5, 200 + 25)
+  ctx.fillText(`${Math.round((theta) * 100) / 100}`, 200 + 5, 200 + 25)
+  ctx.fillText(`${Math.round((r) * 100) / 100}`, 200 + 5, 200 - 5)
 
   ctx.fillRect(x - 5, y - 5, 10, 10)
 })
