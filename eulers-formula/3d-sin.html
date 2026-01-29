@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euler's Formula</title>
+  <link rel="stylesheet" href="/lib/jsxgraph.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    MathJax = {
+      options: {
+        enableMenu: false,
+        menuOptions: {
+        settings: {
+          enrich: false,         // true to enable semantic-enrichment
+          collapsible: false,   // true to enable collapsible math
+          speech: false,         // true to enable speech generation
+          braille: false,        // true to enable Braille generation
+          assistiveMml: false,  // true to enable assistive MathML
+        }
+    }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        displayMath: {'[+]': [['$$', '$$']]},
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Euler's Formula</h1>
+
+  <span>
+    $$
+    e^{i\theta} = \cos\theta + i\sin\theta
+    $$
+  </span>
+
+  <button id="read">[READ]</button>
+
+  <div id="jxgbox" class="jxgbox" style="max-width:600px; aspect-ratio: 1/1;"></div>
+
+
+  <script src="/lib/jsxgraphcore.js"></script>
+  <script src="/lib/math.js"></script>
+  <script src="/lib/mathjax4/tex-chtml.js"></script>
+  <script src="3d-sin.js"></script>
+</body>
+</html>
