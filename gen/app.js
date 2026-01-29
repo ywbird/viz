@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch {
     code.value = `
 const board = JXG.JSXGraph.initBoard(
-  'jxgbox',
+  BOX_ID,
   {
     boundingbox: [-4, 4, 4, -4],
     axis: true,
