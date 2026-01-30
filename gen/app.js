@@ -5,14 +5,13 @@ const saveBtn = document.getElementById("save-btn");
 const code = document.getElementById("code");
 const error = document.getElementById("error");
 
-const BOX_ID = "jxgbox";
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     code.value = await decompressString(new URL(window.location).searchParams.get("c"));
   } catch {
-    code.value = `
-const board = JXG.JSXGraph.initBoard(
+    code.value = `const board = JXG.JSXGraph.initBoard(
   BOX_ID,
   {
     boundingbox: [-4, 4, 4, -4],
@@ -20,7 +19,8 @@ const board = JXG.JSXGraph.initBoard(
     showCopyright: false,
   }
 );
-  `;
+
+`;
   }
 
   runCode();
@@ -40,7 +40,7 @@ saveBtn.addEventListener("click", async ()=>{
 
 function runCode() {
   try {
-    new Function(code.value)();
+    new Function('const BOX_ID = "jxgbox"; ' + code.value)();
   } catch (err) {
     error.innerText = err;
   }
