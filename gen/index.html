@@ -5,35 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Euler's Formula</title>
   <link rel="stylesheet" href="/lib/jsxgraph.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/gen/dist/index.css">
 </head>
 <body>
-  <div style="display: flex; flex-direction: columns;">
+  <div id="container">
     <div>
       <div id="jxgbox" class="jxgbox" style="width:600px; aspect-ratio: 1/1;"></div>
-    </div>
-
-    <div>
-      <pre>box id: `BOX_ID`</pre>
-      <textarea cols="80" rows="30" name="code" id="code">
-      </textarea>
 
       <div>
-      <button id="apply-btn">APPLY</button>
-      <button id="save-btn">SAVE</button>
+        <details>
+          <summary>CODE <button id="edit-btn">EDIT</button></summary>
+          <pre id="code"></pre>
+        </details>
+        
+        <pre id="error"></pre>
       </div>
-
-      <pre id="error"></pre>
-
-      <ul>
-      <li><a href="https://mathjs.org/docs/index.html">Math.js Documentation</a></li>
-      <li><a href="https://jsxgraph.org/docs/index.html">JSXGraph 1.12.2 Reference</a></li>
-      </ul>
     </div>
   </div>
 
   <script src="/lib/jsxgraphcore.js"></script>
   <script src="/lib/math.js"></script>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="/gen/dist/index.js"></script>
 </body>
 </html>

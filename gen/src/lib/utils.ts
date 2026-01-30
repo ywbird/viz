@@ -81,3 +81,13 @@ export async function decompressString(base64Text) {
 }
 
 /* ==========================================================================*/
+
+export function getFormatTime(date: Date): string {
+    const hh = date.getHours(); // 시간
+    const h = hh >= 10 ? hh : '0' + hh ;
+    const mm = date.getMinutes(); // 분
+    const m = mm >= 10 ? mm : '0' + mm ;
+    const ss = date.getSeconds(); // 초
+    const s = ss >= 10 ? ss : '0' + ss ;
+    return `${h}:${m}:${s}`;
+}

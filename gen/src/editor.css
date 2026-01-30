@@ -1,0 +1,101 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
+  /* gap: 10px; */
+  
+  --width: 600px;
+
+  height: 100%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  gap: 10px;
+  height: 100%;
+
+  .btns {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+
+    button { flex: 1 1; }
+  }
+
+  #editor-wrapper {
+    display: flex;
+    flex: 1 1;
+    border: 1px solid black;
+
+    height: 95%;
+  }
+
+  .cm-editor {
+    flex: 1 1;
+    inset: 0;
+    overflow-y: auto;
+
+    .cm-content {
+      font-size: 1.5em;
+    }
+    .cm-scroller {
+      overflow: auto;
+    }
+  }
+}
+
+.outputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  #logs {
+    flex: 1 1;
+    border: 1px solid black;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow: auto;
+    padding: 5px;
+    line-height: 1.3em;
+  }
+
+  #box-wrapper {
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+
+   .jxgbox {
+      width: var(--width);
+      aspect-ratio: 1/1;
+    }
+  }
+}
+
+/* Code from https://split.js.org/ */
+.split {
+    display: flex;
+    flex-direction: row;
+}
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}

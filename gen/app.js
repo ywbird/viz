@@ -1,4 +1,4 @@
-import { decodeBase64UTF8, encodeBase64UTF8, compressString, decompressString } from "./utils.js";
+import { decodeBase64UTF8, encodeBase64UTF8, compressString, decompressString } from "../utils.js";
 
 const applyBtn = document.getElementById("apply-btn");
 const saveBtn = document.getElementById("save-btn");

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viz Gen Editor</title>
+  <link rel="stylesheet" href="/lib/jsxgraph.css">
+  <link rel="stylesheet" href="/gen/dist/editor.css">
+</head>
+<body>
+  <div id="container" class="split">
+    <div class="inputs" id="inputs">
+      <div id="editor-wrapper"></div>
+      <div class="btns">
+        <button id="apply-btn">APPLY</button>
+        <button id="save-btn">SAVE</button>
+        <button id="share-btn">SHARE</button>
+        <button id="help-btn">HELP</button>
+      </div>
+    </div>
+
+    <div class="outputs" id="outputs">
+      <div id="box-wrapper">
+        <div id="jxgbox" class="jxgbox"></div>
+      </div>
+      <pre id="logs"></pre>
+    </div>
+  </div>
+
+  <dialog id="dialog" popover>
+    <p>
+    This is online editor for JSXGraph.<br>
+    You can share your graphs with links.<br>
+    + Built in Math.js.
+    </p>
+
+    <p>
+    You can enable VIM mode by adding <code>&amp;v=1</code> to URL params.<br>
+    In VIM mode,<br>
+    <ul>
+      <li>type <code>:w</code> to save code in URL</li>
+      <li>type <code>:a</code> to apply current code</li>
+      <li>type <code>:e</code> to copy sharable URL to clipboard</li>
+    </ul>
+    </p>
+
+    see also:
+    <ul>
+      <li><a href="https://mathjs.org/docs/index.html">Math.js Documentation</a></li>
+      <li><a href="https://jsxgraph.org/docs/">JSXGraph Reference</a></li>
+    </ul>
+
+    <small>(Press <key>ESC</key> to exit this popup)</small>
+  </dialog>
+
+  <script src="/lib/jsxgraphcore.js"></script>
+  <script src="/lib/math.js"></script>
+  <script type="module" src="/gen/dist/editor.js"></script>
+</body>
+</html>
