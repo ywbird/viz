@@ -7,3 +7,6 @@
 [submodule "prey-predator-simulation"]
 	path = prey-predator-simulation
 	url = git@github.com:ywbird/prey-predator-simulation.git
+[submodule "binary-visualization"]
+	path = binary-visualization
+	url = git@github.com:ywbird/binary-visualization.git
