@@ -48,8 +48,9 @@ async function initEditor() {
 
   let code = ""
   try {
-    code = await decompressString(decodeURIComponent(new URL(window.location.toString()).searchParams.get("c")));
-  } catch {
+    code = decodeURIComponent(await decompressString(new URL(window.location.toString()).searchParams.get("c")));
+  } catch(err) {
+    log(err, "ERROR");
     code = `const board = JXG.JSXGraph.initBoard(
   BOX_ID,
   {

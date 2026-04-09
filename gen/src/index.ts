@@ -31,13 +31,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-editBtn.addEventListener("click", async ()=>{
-  const url = new URL(window.location.toString());
-  const params = url.searchParams;
-  const data = params.get("c");
+editBtn.addEventListener("click", () => {
+  const url = new URL(window.location.href);
+  const data = url.searchParams.get("c"); // 여기서 이미 브라우저가 공백 처리를 했을 수 있음
 
-  const newUrl = `${url.origin}/gen/editor/index.html?c=${data}`;
-  window.open(newUrl, "_blank");
+  if (!data) return;
+
+  // 새 URL 생성
+  const newTarget = new URL(`${window.location.origin}/gen/editor/index.html`);
+  
+  // set 메서드를 사용하면 'data' 내의 +, /, = 기호가 
+  // URL 안전 형태(%2B, %2F, %3D)로 자동 인코딩됩니다.
+  newTarget.searchParams.set("c", data);
+
+  window.open(newTarget.toString(), "_blank");
 });
 
 async function runCode() {
