@@ -17,12 +17,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    if (s.get("embed") === "1") {
+    if (s.get("e") === "1") {
       document.body.classList.add("embed");
     }
-    const width = s.get("width");
+    const width = s.get("w");
     if (width !== undefined)
       jxgbox.style.width = `${width}px`;
+
+    const height = s.get("h");
+    if (height !== undefined) {
+      jxgbox.style.height = `${height}px`;
+      jxgbox.style.aspectRatio = `unset`;
+    }
   } catch (err) {
     code.innerText = err;
   }
