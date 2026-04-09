@@ -1,14 +1,29 @@
 import { decompressString } from "./lib/utils";
 import "./index.css";
 
+const box = document.getElementById("jxgbox");
 const editBtn = document.getElementById("edit-btn");
 const code = document.getElementById("code");
 const error = document.getElementById("error");
 
 document.addEventListener("DOMContentLoaded", async () => {
+
+  const s = new URL(window.location.toString()).searchParams
+
   try {
-    code.innerText = decodeURIComponent(await decompressString(new URL(window.location.toString()).searchParams.get("c")));
+    code.innerText = decodeURIComponent(await decompressString(s.get("c")));
   } catch(err) {
+    code.innerText = err;
+  }
+
+  try {
+    if (s.get("embed") === "1") {
+      document.body.classList.add("embed");
+    }
+    const width = s.get("width");
+    if (width !== undefined)
+      jxgbox.style.width = `${width}px`;
+  } catch (err) {
     code.innerText = err;
   }
 
